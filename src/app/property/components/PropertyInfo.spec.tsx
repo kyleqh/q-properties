@@ -46,9 +46,11 @@ describe("PropertyInfo", () => {
       waitFor(() => {
         const offerName = screen.getByText("Deluxe Balcony Room")
         const propertyTitle = screen.getByText("Image of Primus Hotel Sydney")
+        const ratings = screen.getAllByRole('icon')
 
         expect(offerName).toBeInTheDocument()
         expect(propertyTitle).toBeInTheDocument()
+        expect(ratings.length).toEqual(5)
       })
     })
   })
