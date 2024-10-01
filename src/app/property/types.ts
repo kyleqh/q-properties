@@ -1,23 +1,27 @@
-enum ImageType { PRIMARY="PRIMARY" }
+export enum ImageType { PRIMARY="PRIMARY" }
 enum PromotionType { MEMBER="MEMBER", CAMPAIGN="CAMPAIGN" }
 enum Currency { AUD="AUD" }
+export enum RatingType {
+  SELF="self",
+  STAR="star"
+}
 export enum CancellationOptionType {
   NOT_REFUNDABLE="NOT_REFUNDABLE",
   FREE_CANCELLATION="FREE_CANCELLATION"
 }
 
 type Address = string[]
-type PreviewImage = {
+export type PreviewImage = {
   url: string
   caption: string
   imageType: ImageType
 }
-type Rating = {
+export type Rating = {
   ratingValue: string
-  ratingType: string
+  ratingType: RatingType
 }
 
-type Property = {
+export type Property = {
   id: string
   title: string
   address: Address
@@ -39,7 +43,7 @@ type CancellationOption = {
   cancellationType: CancellationOptionType
 }
 
-type Offer = {
+export type Offer = {
   promotion: Promotion
   name: string
   displayPrice: Money
