@@ -1,6 +1,6 @@
 export enum ImageType { PRIMARY="PRIMARY" }
-enum PromotionType { MEMBER="MEMBER", CAMPAIGN="CAMPAIGN" }
-enum Currency { AUD="AUD" }
+export enum PromotionType { MEMBER="MEMBER", CAMPAIGN="CAMPAIGN" }
+export enum Currency { AUD="AUD" }
 export enum RatingType {
   SELF="self",
   STAR="star"
@@ -17,7 +17,7 @@ export type PreviewImage = {
   imageType: ImageType
 }
 export type Rating = {
-  ratingValue: string
+  ratingValue: number
   ratingType: RatingType
 }
 
