@@ -11,7 +11,7 @@ export const PropertyInfo = ({ property, offer}: { property: Property, offer: Of
   return (
     <div className="basis-1/2 pt-8 border-b border-b-gray-300">
       <div className="text-xl font-semibold flex gap-5">
-        { property.title }
+        <div className="text-ellipsis overflow-hidden">{ property.title }</div>
         <div className="flex gap-1">
           { whole() }
           { half() }
