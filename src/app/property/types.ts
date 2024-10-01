@@ -1,7 +1,7 @@
 enum ImageType { PRIMARY="PRIMARY" }
 enum PromotionType { MEMBER="MEMBER", CAMPAIGN="CAMPAIGN" }
 enum Currency { AUD="AUD" }
-enum CancellationOptionType {
+export enum CancellationOptionType {
   NOT_REFUNDABLE="NOT_REFUNDABLE",
   FREE_CANCELLATION="FREE_CANCELLATION"
 }
