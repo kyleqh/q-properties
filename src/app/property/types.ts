@@ -34,7 +34,7 @@ type Promotion = {
   type: PromotionType
 }
 
-type Money = {
+export type Money = {
   amount: number
   currency: Currency
 }

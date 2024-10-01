@@ -4,6 +4,7 @@ import { Listing} from "../types"
 import Image from "next/image"
 import { Preview } from "./Preview"
 import { PropertyInfo } from "./PropertyInfo"
+import { RoomRate } from "./RoomRate"
 
 
 
@@ -12,8 +13,7 @@ const PropertyListing = ({ listing } : { listing : Listing }) => {
     <div className="flex flex-row gap-4">
       <Preview previewImage={listing.property.previewImage} promoTitle={listing.offer.promotion.title} />
       <PropertyInfo property={listing.property} offer={listing.offer} />
-      <div className="basis-1/5 border border-gray-600">
-      </div>
+      <RoomRate displayPrice={listing.offer.displayPrice} savings={listing.offer.savings} />
     </div>
   )
 }
