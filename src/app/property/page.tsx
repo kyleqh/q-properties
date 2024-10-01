@@ -1,0 +1,23 @@
+import { Listing } from "./types"
+
+const propertyData = async () : Promise<Listing[]> => {
+  const listingResponse = await fetch("http://localhost:3020/results", { cache: 'force-cache' })
+  const listings =  await listingResponse.json()
+  
+  return listings.map((listing : Listing) => {
+    return listing
+  })
+}
+
+const PropertyListingPage = async () => {
+  const data = await propertyData()
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div>
+       { data.map((object, i) => <div key={i}>{object.id}</div>)}
+      </div>
+    </div>
+  )
+}
+
+export default PropertyListingPage
