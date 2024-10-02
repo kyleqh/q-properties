@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen, waitFor } from "@testing-library/react"
 import PropertyListingPage from "./page"
 
 // Mock the global fetch function
@@ -49,9 +49,12 @@ import PropertyListingPage from "./page"
 
 describe("Page Render", () => {
   
-  xit('renders the property listings', () => {
+  xit('renders the property listings', async () => {
     render(<PropertyListingPage />)
-    // expect(fetch).toHaveBeenCalledTimes(1)
-    expect(screen.queryByText("Property Listings")).toBeInTheDocument()
+
+    expect(fetch).toHaveBeenCalledTimes(1)
+    waitFor(() =>{
+      expect(screen.getByText(/Marriot/)).toBeInTheDocument()
+    })
   })
 })
