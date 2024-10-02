@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Preview } from "./Preview"
 import { PropertyInfo } from "./PropertyInfo"
 import { RoomRate } from "./RoomRate"
+import { sortListingByPrice } from "../helpers/sorter"
 
 
 
@@ -47,11 +48,7 @@ export const PropertyListings = ({ listings } : { listings: Listing[] }) => {
 
   const sortList = (e: { target: { value: any } }) => {
     const sortOption = e.target.value
-    const sorter = {
-      [PriceSort.HIGHTOLOW]: () : Listing[] => listingData.sort((a, b) => b.offer.displayPrice.amount - a.offer.displayPrice.amount),
-      [PriceSort.LOWTOHIGH]: () : Listing[] => listingData.sort((a, b) => a.offer.displayPrice.amount - b.offer.displayPrice.amount)
-    }
-    setListingData( sorter[sortOption as PriceSort]() )
+    setListingData( sortListingByPrice(sortOption, listingData) )
     setOrderChanged(!orderChanged)
   }
 
